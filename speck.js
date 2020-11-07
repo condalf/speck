@@ -51,6 +51,16 @@ class Program {
                 .addTo(this.map)
                 .bindPopup(address);
             this.markers.push(marker);
+
+            let tag = document.createElement("div");
+            tag.style.position = "absolute";
+            tag.style.top = "100px";
+            tag.style.left = "100px";
+            tag.style.zIndex = "1000";
+            var text = document.createTextNode("100");
+            tag.appendChild(text);
+            var element = document.getElementById("map");
+            element.appendChild(tag);
         }
     }
 
