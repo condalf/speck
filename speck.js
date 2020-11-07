@@ -15,30 +15,6 @@ class Program {
 
 
     /**
-     * Creates the correct number of table entries.
-     */
-    makeTable() {
-        const addressCount = document.getElementById("address-count").valueAsNumber;
-
-        // Create the correct amount of rows. If there are too many then remove
-        // the right amount instead.
-        let nRows = this.table.rows.length;
-        while (nRows != addressCount + 1) {
-            if (nRows > addressCount + 1) {
-                this.table.deleteRow(-1);
-                nRows--;
-            } else {
-                const row = this.table.insertRow(-1);
-
-                row.insertCell(0).innerHTML = nRows;
-                row.insertCell(1).innerHTML = "<input type='text'>"
-                nRows++;
-            }
-        }
-    }
-
-
-    /**
      * Update the map.
      */
     async updateMarkers() {
