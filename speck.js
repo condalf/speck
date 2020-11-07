@@ -47,20 +47,14 @@ class Program {
             const result = results[0];
 
             // Create the marker.
-            const marker = L.marker([result.y, result.x])
+            let icon = L.icon({
+                iconUrl: `./images/marker${row.rowIndex}.png`,
+            });
+
+            const marker = L.marker([result.y, result.x], { icon: icon })
                 .addTo(this.map)
                 .bindPopup(address);
             this.markers.push(marker);
-
-            let tag = document.createElement("div");
-            tag.style.position = "absolute";
-            tag.style.top = "100px";
-            tag.style.left = "100px";
-            tag.style.zIndex = "1000";
-            var text = document.createTextNode("100");
-            tag.appendChild(text);
-            var element = document.getElementById("map");
-            element.appendChild(tag);
         }
     }
 
