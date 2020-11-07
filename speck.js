@@ -51,8 +51,8 @@ class Program {
             });
 
             const marker = L.marker([result.y, result.x], { icon: icon })
-                .addTo(this.map)
-                .bindPopup(address);
+                .addTo(this.map) 
+                .bindPopup(address, { autoClose: false, closeButton: false, closeOnClick: false });
             this.markers.push(marker);
         }
     }
