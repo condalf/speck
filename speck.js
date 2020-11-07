@@ -18,10 +18,7 @@ class Program {
      * Update the map.
      */
     async updateMarkers() {
-        // Remove all previous markers.
-        for (const marker of this.markers) 
-            marker.remove();
-        this.markers = [];
+        this._clearMarkers();
 
         // Process the table entries and add markers to the map.
         for (const row of this.table.rows) {
@@ -59,6 +56,22 @@ class Program {
     }
 
 
+    clear() {
+        // Remove table entries.
+        let table = document.getElementById("addresses");
+        for (const row of this.table.rows) {
+            // Skip first (heading) row.
+            if (row.rowIndex == 0) continue;
+
+            const inputField = row.cells[1].children[0];
+            inputField.value = "";
+        }
+
+        // Remove the markers.
+        this._clearMarkers();
+    }
+
+
     /**
      * Initialise the map.
      */
@@ -76,6 +89,15 @@ class Program {
 
         return map;
     }
+    
+    
+    _clearMarkers() {
+        // Remove all previous markers.
+        for (const marker of this.markers) 
+            marker.remove();
+        this.markers = [];
+    }
 }
+
 
 var program = new Program();
