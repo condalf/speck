@@ -46,6 +46,8 @@ class Program {
             // Create the marker.
             let icon = L.icon({
                 iconUrl: `./images/marker${row.rowIndex}.png`,
+                iconAnchor: [25, 25],
+                popupAnchor: [0, -25]
             });
 
             const marker = L.marker([result.y, result.x], { icon: icon })
