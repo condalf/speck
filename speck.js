@@ -81,7 +81,10 @@ class Program {
         // Create the map and add tiling to it.
         let map = L.map("map").setView([51.319129, -0.559470], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, " +
+                         "<a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, " +
+                         "Imagery &copy; <a href='https://www.mapbox.com/'>Mapbox</a>, " +
+                         "Icons &copy; <a href='https://icons8.com'>ICONS8</a>",
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
