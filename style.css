@@ -26,6 +26,10 @@
   text-align: center;
 }
 
+td.address-id {
+    text-align: center;
+}
+
 input.address {
     box-sizing: border-box;
     width: 100%;
